@@ -5,85 +5,107 @@ import dev.wolveringer.bungeeutil.player.Player;
 
 public abstract class ItemStack extends Item {
 
-	public static class Click {
-		private Player player;
-		private int slot;
-		private Inventory inventory;
-		private int mode;
-		private boolean cancel = true;
-		private Item item;
-		private boolean sync;
+    public enum ClickType
+    {
+        RIGHT,
+        LEFT;
+    }
+
+    public static class Click{
+        private Player player;
+        private int slot;
+        private Inventory inventory;
+        private ClickType clickType = null;
+        private int mode;
+        private boolean cancel = true;
+        private Item item;
+        private boolean sync;
 
 		public Click(Player p, int slot, Inventory inv,Item ci, int mode,boolean sync) {
-			this.player = p;
-			this.slot = slot;
-			this.inventory = inv;
-			this.mode = mode;
-			this.item = ci;
-			this.sync = sync;
-		}
+            this.player = p;
+            this.slot = slot;
+            this.inventory = inv;
+            this.mode = mode;
+            this.item = ci;
+            this.sync = sync;
+        }
+        
+        public Click(Player p, int slot, Inventory inv, Item ci, int mode, ClickType clickType, boolean sync){
+            this.player = p;
+            this.slot = slot;
+            this.inventory = inv;
+            this.mode = mode;
+            this.clickType = clickType;
+            this.item = ci;
+            this.sync = sync;
+        }
 
 		public Inventory getInventory() {
-			return this.inventory;
-		}
+            return this.inventory;
+        }
 
 		public Item getItem() {
-			return this.item;
-		}
+            return this.item;
+        }
 
 		public int getMode() {
-			return this.mode;
-		}
-
+            return this.mode;
+        }
+        
+        public ClickType getClickType()
+        {
+            return this.clickType;
+        }
+        
 		public Player getPlayer() {
-			return this.player;
-		}
+            return this.player;
+        }
 
 		public int getSlot() {
-			return this.slot;
-		}
+            return this.slot;
+        }
 
-		@Deprecated
+        @Deprecated
 		public boolean isCancelled() {
-			return this.cancel;
-		}
+            return this.cancel;
+        }
 
 		public boolean isSyncHandle() {
-			return this.sync;
-		}
+            return this.sync;
+        }
 
-		@Deprecated
+        @Deprecated
 		public void setCancelled(boolean b) {
-			this.cancel = b;
-		}
-	}
+            this.cancel = b;
+        }
+    }
 
 	public static enum InteractType {
-		RIGHT_CLICK,
-		LEFT_CLICK;
-	}
+        RIGHT_CLICK,
+        LEFT_CLICK;
+    }
 
-	@SuppressWarnings("deprecation")
+    @SuppressWarnings("deprecation")
 	public ItemStack(int type, int amount, short damage) {
-		super(type, amount, damage);
-	}
+        super(type, amount, damage);
+    }
 
 	public ItemStack(Item stack) throws IllegalArgumentException {
-		super(stack);
-	}
+        super(stack);
+    }
 
 	public ItemStack(Material type) {
-		super(type);
-	}
+        super(type);
+    }
 
 	public ItemStack(Material type, int amount) {
-		super(type, amount);
-	}
+        super(type, amount);
+    }
 
 	public ItemStack(Material type, int amount, short damage) {
-		super(type, amount, damage);
-	}
-	public abstract void click(Click click);
+        super(type, amount, damage);
+    }
+    public abstract void click(Click click);
 
 	public void onInteract(Player player,InteractType type){}
-}
+    }

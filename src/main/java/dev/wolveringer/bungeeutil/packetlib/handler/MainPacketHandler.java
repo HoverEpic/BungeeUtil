@@ -298,7 +298,8 @@ public class MainPacketHandler {
 				player.updateInventory();
 				if (player.getInventoryView().isClickable()){
 					boolean sync = ((CraftItemMeta)is.getItemMeta()).isClickSync() || Configuration.isSyncInventoryClickActive();
-					handleItemClick(player,is,new Click(player, pl.getSlot(), player.getInventoryView(), pl.getItem(), pl.getMode(), sync),sync,false);
+                                        ClickType clickType = button == 0 ? ClickType.LEFT : ClickType.RIGHT;
+					handleItemClick(player,is,new Click(player, pl.getSlot(), player.getInventoryView(), pl.getItem(), pl.getMode(), clickType, sync),sync,false);
 				}
 				Profiler.packet_handle.stop("handleWindowClick");
 				e.setCancelled(true);
