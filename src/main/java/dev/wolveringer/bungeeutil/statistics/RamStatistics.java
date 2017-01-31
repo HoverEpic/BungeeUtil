@@ -7,7 +7,7 @@ import dev.wolveringer.bungeeutil.BungeeUtil;
 import dev.wolveringer.terminal.graph.TerminalGraph;
 import dev.wolveringer.terminal.graph.TerminalGraph.Graph;
 import dev.wolveringer.terminal.graph.TerminalGraph.Point;
-import dev.wolveringer.terminal.string.ColoredChar;
+import dev.wolveringer.string.ColoredChar;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import net.md_5.bungee.BungeeCord;

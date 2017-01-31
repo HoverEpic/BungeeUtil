@@ -169,9 +169,9 @@ public class WarpedMinecraftDecoder extends MinecraftDecoder {
 				case BUNGEECORD:
 					bungeePacket = prot.createPacket(packetId, this.getProtocolVersion());
 					break;
-				case WATERFALL:
-					bungeePacket = prot.createPacket(packetId, this.getProtocolVersion(), false); //Dont support forge
-					break;
+//				case WATERFALL:
+//					bungeePacket = prot.createPacket(packetId, this.getProtocolVersion(), false); //Dont support forge
+//					break;
 				default:
 					break;
 				}

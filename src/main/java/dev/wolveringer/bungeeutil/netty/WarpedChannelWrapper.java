@@ -338,9 +338,9 @@ public class WarpedChannelWrapper extends ChannelWrapper {
 				case BUNGEECORD:
 					this.addBefore(PipelineUtils.PACKET_DECODER, "decompress", new PacketDecompressor());
 					break;
-				case WATERFALL:
-					this.addBefore(PipelineUtils.PACKET_DECODER, "decompress", new PacketDecompressor(compressionThreshold));
-					break;
+//				case WATERFALL:
+//					this.addBefore(PipelineUtils.PACKET_DECODER, "decompress", new PacketDecompressor(compressionThreshold));
+//					break;
 				default:
 					break;
 				}

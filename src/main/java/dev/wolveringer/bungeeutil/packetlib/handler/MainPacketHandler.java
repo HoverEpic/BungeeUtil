@@ -12,6 +12,7 @@ import dev.wolveringer.bungeeutil.inventory.Inventory;
 import dev.wolveringer.bungeeutil.item.Item;
 import dev.wolveringer.bungeeutil.item.ItemStack;
 import dev.wolveringer.bungeeutil.item.ItemStack.Click;
+import dev.wolveringer.bungeeutil.item.ItemStack.ClickType;
 import dev.wolveringer.bungeeutil.item.ItemStack.InteractType;
 import dev.wolveringer.bungeeutil.item.meta.CraftItemMeta;
 import dev.wolveringer.bungeeutil.packetlib.PacketHandleEvent;
